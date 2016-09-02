@@ -1,14 +1,11 @@
 <html>
   <head>
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css.map" rel="stylesheet">
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" rel="stylesheet">
+
     <link href="./query-builder.default.min.css" rel="stylesheet">
     <link href="./query-builder.default.min.css" rel="stylesheet">
+    <link href="./custom.css" rel="stylesheet">
 
     <script src="./jquery-3.1.0.min.js"></script>
-    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="./jQuery.extendext.min.js"></script>
     <script src="./doT.min.js"></script>
     <script src="./moment.min.js"></script>
@@ -26,14 +23,16 @@
       type: 'integer',
       input: 'select',
       operators: ['equal'],
-      values:{1:'tag1', 2:'tag2', 3:'tag3', 4:'tag4', 5:'tag5'}
+      values:{1:'tag1', 2:'tag2', 3:'tag3', 4:'tag4', 5:'tag5'},
+      optgroup:'User Tags'      
       },{
       id: 'has_not_tag',
       label: 'Has Not Tag',
       type: 'integer',
       input: 'select',
       operators: ['equal'],
-      values:{1:'tag1', 2:'tag2', 3:'tag3', 4:'tag4', 5:'tag5'}
+      values:{1:'tag1', 2:'tag2', 3:'tag3', 4:'tag4', 5:'tag5'},
+      optgroup:'User Tags'
       }
       ]
       });
