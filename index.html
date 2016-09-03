@@ -33,7 +33,129 @@
       operators: ['equal'],
       values:{1:'tag1', 2:'tag2', 3:'tag3', 4:'tag4', 5:'tag5'},
       optgroup:'User Tags'
-      }
+      },
+  /*
+   * textarea
+   */
+  {
+    id: 'bson',
+    label: 'BSON',
+    type: 'string',
+    input: 'textarea',
+    operators: ['equal'],
+    size: 30,
+    rows: 3
+  },
+  /*
+   * checkbox
+   */
+  {
+    id: 'category',
+    label: 'Category',
+    type: 'integer',
+    input: 'checkbox',
+    optgroup: 'core',
+    values: {
+      1: 'Books',
+      2: 'Movies',
+      3: 'Music',
+      4: 'Tools',
+      5: 'Goodies',
+      6: 'Clothes'
+    },
+    colors: {
+      1: 'foo',
+      2: 'warning',
+      5: 'success'
+    },
+    operators: ['in', 'not_in', 'equal', 'not_equal', 'is_null', 'is_not_null']
+  },
+  /*
+   * select
+   */
+  {
+    id: 'continent',
+    label: 'Continent',
+    type: 'string',
+    input: 'select',
+    optgroup: 'core',
+    placeholder: 'Select something',
+    values: {
+      'eur': 'Europe',
+      'asia': 'Asia',
+      'oce': 'Oceania',
+      'afr': 'Africa',
+      'na': 'North America',
+      'sa': 'South America'
+    },
+    operators: ['equal', 'not_equal', 'is_null', 'is_not_null']
+  },
+  /*
+   * Selectize
+   */
+  {
+    id: 'state',
+    label: 'State',
+    type: 'string',
+    input: 'select',
+    multiple: true,
+    plugin: 'selectize',
+    plugin_config: {
+      valueField: 'id',
+      labelField: 'name',
+      searchField: 'name',
+      sortField: 'name',
+      options: [
+        { id: "AL", name: "Alabama" },
+        { id: "AK", name: "Alaska" },
+        { id: "AZ", name: "Arizona" },
+        { id: "AR", name: "Arkansas" },
+        { id: "CA", name: "California" },
+        { id: "CO", name: "Colorado" },
+        { id: "CT", name: "Connecticut" },
+        { id: "DE", name: "Delaware" },
+        { id: "DC", name: "District of Columbia" },
+        { id: "FL", name: "Florida" },
+        { id: "GA", name: "Georgia" },
+        { id: "HI", name: "Hawaii" },
+        { id: "ID", name: "Idaho" }
+      ]
+    },
+    valueSetter: function(rule, value) {
+      rule.$el.find('.rule-value-container select')[0].selectize.setValue(value);
+    }
+  },
+  /*
+   * radio
+   */
+  {
+    id: 'in_stock',
+    label: 'In stock',
+    type: 'integer',
+    input: 'radio',
+    optgroup: 'plugin',
+    values: {
+      1: 'Yes',
+      0: 'No'
+    },
+    operators: ['equal']
+  },
+  /*
+   * double
+   */
+  {
+    id: 'price',
+    label: 'Price',
+    type: 'double',
+    size: 5,
+    validation: {
+      min: 0,
+      step: 0.01
+    },
+    data: {
+      class: 'com.example.PriceTag'
+    }
+  },
       ]
       });
 $('.parse-json').on('click', function() {
